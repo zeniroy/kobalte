@@ -272,7 +272,7 @@ export function NumberFieldRoot<T extends ValidComponent = "div">(
 				return;
 			}
 
-			if (context.minValue())
+			if (context.minValue() !== undefined || context.minValue() !== null)
 				rawValue = Math.max(rawValue, context.minValue()!);
 			if (context.maxValue())
 				rawValue = Math.min(rawValue, context.maxValue()!);
